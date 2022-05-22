@@ -1,7 +1,5 @@
 # Import Fleet and Herd
 
-from Fleet import fleet
-from Herd import herd
 
 from Robot import robot
 from Dinosaur import dinosaur
@@ -10,13 +8,14 @@ from Dinosaur import dinosaur
 
 class battlefield:
     def __init__(self):
-        self.fleet_robots = fleet("Robo T4s")
-        self.herd_dinosaurs = herd("Attack Dinos")
-        # self.name = "Battlefield One"
+        self.robot_warrior = (robot)
+        self.dino_warrior = (dinosaur)
+        self.name = "Battlefield One"
         pass
 
     def run_game(self):
         self.greeting()
+        self.battle_phase()
         #run_battle()
         #while dino.hp and robo.hp is greater than 0
             #robo_attack_dino(dinosaur)
@@ -34,7 +33,7 @@ Welcome to the Battlefield! Dino and Robot attack!
 
     """ )
 
-    def battle_start(self)          #Maybe attack portion
+    def battle_phase(self)          #Maybe attack portion
 
     def indentify_winner(self):
 
