@@ -1,6 +1,7 @@
 # Import Fleet and Herd
 
 
+from ast import Return
 from Robot import robot
 from Dinosaur import dinosaur
 
@@ -8,8 +9,6 @@ from Dinosaur import dinosaur
 
 class battlefield:
     def __init__(self):
-        self.robot_warrior = (robot)
-        self.dino_warrior = (dinosaur)
         self.name = "Battlefield One"
         pass
         
@@ -28,12 +27,30 @@ Welcome to the Battlefield! Dino and Robot attack!
 
     """ )
 
-    def battle_phase(self):
-    
-        while dinosaur.health and robot.health > 0:
-            if dinosaur.attack():
-                print(f"Robot health is reduced to {robot.health} after that attack")
+
+
+    def battle_phase(self):  
+        dino_health = 100
+        robo_health = 100   
+        thunder_punch = 20
+        robo_destroy = 15
+        while dino_health and robo_health > 0:
+            robo_health -= thunder_punch
+            print(f"Robot health is reduced to {robo_health} after that attack")
             pass
+            dino_health -= robo_destroy
+            print(f"Dinosaur health is reduced to {dino_health} after that attack")
+        if dino_health <= 0:
+            print("Down goes the Dino!!")
+            winner = dinosaur
+            return winner 
+            
+        if robo_health <= 0:
+            print("The Robot is out!!")
+            winner = robot
+            return winner 
+            
+                
             # robo_attack_dino(dinosaur)
             #     subtract health on attack
             # dino_attack_robo(robot)

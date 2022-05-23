@@ -1,12 +1,13 @@
 
+
 from Dinosaur import dinosaur
 from Weapon import weapon
 
 class robot:
-    def __init__(self):
+    def __init__(self, robo_health):
         self.name = "Mega T8"
-        self.health = 100
-        self.active_weapon = (weapon)
+        self.health = robo_health
+        self.active_weapon = (weapon.attack_power)
         pass
 
     def attack(self):
