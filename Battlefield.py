@@ -12,18 +12,13 @@ class battlefield:
         self.dino_warrior = (dinosaur)
         self.name = "Battlefield One"
         pass
+        
 
     def run_game(self):
         self.greeting()
-        self.battle_phase()
-        #run_battle()
-        #while dino.hp and robo.hp is greater than 0
-            #robo_attack_dino(dinosaur)
-                # subtract health on attack
-            #dino_attack_robo(robot)
-                # subtract health on attack
+        self.battle_phase()  
         print("Battle start")
-        self.ending()
+        self.indentify_winner()
         pass
 
     def greeting(self):
@@ -33,13 +28,16 @@ Welcome to the Battlefield! Dino and Robot attack!
 
     """ )
 
-    def battle_phase(self)          #Maybe attack portion
+    def battle_phase(self):
+    
+        while dinosaur.health and robot.health > 0:
+            if dinosaur.attack():
+                print(f"Robot health is reduced to {robot.health} after that attack")
+            pass
+            # robo_attack_dino(dinosaur)
+            #     subtract health on attack
+            # dino_attack_robo(robot)
+            #     subtract health on attack
 
-    def indentify_winner(self):
-
-
-    def ending(self):
-        print("""
-
-I hope you enjoyed the carnage!"""
-    )
+    def indentify_winner(self, winner):
+        self.winner = winner

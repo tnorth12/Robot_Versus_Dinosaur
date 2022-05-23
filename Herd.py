@@ -2,7 +2,7 @@
 
 # class declaration
 
-class herd:
-    def __init__(self, name):
-        self.name = name
-        pass
+# class herd:
+#     def __init__(self, name):
+#         self.name = name
+#         pass

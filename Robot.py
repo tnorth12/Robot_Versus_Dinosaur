@@ -9,5 +9,5 @@ class robot:
         self.active_weapon = (weapon)
         pass
 
-    def attack(self,):
+    def attack(self):
         self.active_weapon -= dinosaur.health
