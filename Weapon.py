@@ -1,7 +1,7 @@
 
 class weapon:
-    def __init__(self):
+    def __init__(self, robo_destroy):
         self.weapon_name = "Phaser"
-        self.attack_power = 18
+        self.attack_power = robo_destroy
         pass
 

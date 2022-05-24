@@ -2,6 +2,7 @@
 
 from Robot import robot
 from Dinosaur import dinosaur
+from Weapon import weapon
 
 # Declare the Battlefield class
 
@@ -13,9 +14,10 @@ class battlefield:
 
     def run_game(self):
         self.greeting()
-        self.battle_phase()  
+        self.battle_phase()
         self.display_winner()
-        print(f"\nToday's winner is {battlefield.battle_phase}!!")
+        
+        
         
             
 
@@ -30,36 +32,34 @@ Welcome to the Battlefield! The battle between robot and dinosaur is about to be
     """ )
 
 
-
     def battle_phase(self):  
-        dino_health = 100
-        robo_health = 100   
-        thunder_punch = 20
-        robo_destroy = 15
-        while dino_health and robo_health > 0:
-            dino_health -= robo_destroy
-            print(f"\nWhat a shot by the robot!!\nDinosaur health is reduced to {dino_health} after that attack!!\n")
+        robot.robo_health = 100    
+        weapon.robo_destroy = 15
+        dinosaur.thunder_punch = 20
+        dinosaur.dino_health = 100
+        while dinosaur.dino_health and robot.robo_health > 0:
+            dinosaur.dino_health -= weapon.robo_destroy
+            print(f"\nWhat a shot by the robot!!\nDinosaur health is reduced to {dinosaur.dino_health} after that attack!!\n")
             pass
-            robo_health -= thunder_punch
-            print(f"\nAn awesome blow by the donosaur!!\nRobot health is reduced to {robo_health} now!!\n")
+            robot.robo_health -= dinosaur.thunder_punch 
+            print(f"\nAn awesome blow by the donosaur!!\nRobot health is reduced to {robot.robo_health} now!!\n")
             
 
-        if dino_health <= 0:
+        if dinosaur.dino_health <= 0:
             print(
                 
 """Down goes the Dino!!"""
 )
-            display_winner = "Robot"
-            return display_winner
+            return battlefield.battle_phase
             
-        if robo_health <= 0:
+            
+        if robot.robo_health <= 0:
             print(
 
 """The Robot is out!!"""
 )
-            display_winner = "Dinosaur"
-            return display_winner 
-            pass
+            return battlefield.battle_phase
+            
                 
             # robo_attack_dino(dinosaur)
             #     subtract health on attack
@@ -67,5 +67,5 @@ Welcome to the Battlefield! The battle between robot and dinosaur is about to be
             #     subtract health on attack
 
     def display_winner():
-        battlefield.battle_phase = ""
+        print(f"display {battlefield.battle_phase}")
         
